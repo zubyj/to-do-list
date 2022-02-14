@@ -1,9 +1,10 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -14,8 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,6 +28,19 @@
   color: #61dafb;
 }
 
+.delete-Btn {
+  color: RGBA(255, 86, 0, 1)	
+}
+
+.edit-Btn {
+  color: #006600;
+}
+
+.done-Edit-Btn {
+  color: #006600;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +48,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  font-size: 2rem;
 }
