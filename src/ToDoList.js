@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import './ToDoList.css';
 import Task from './Task.js'
-
-// Material UI imports
-import TextField from '@mui/material/TextField'
-import Button from '@mui/material/Button';
+import InputField from './InputField'
 
 function ToDoList() {
   const [list, setList] = useState([]);
@@ -38,34 +35,14 @@ function ToDoList() {
       <header className="App-header">
 
         <h1>To Do List</h1>
-
         {/* List of tasks */}
         {list.map((task, index) => {
         return (
           <Task key={index} id={index} text={task} deleteTask={deleteTask} editTask={editTask}/>
               )
         })}
-        
-        {/* Text input & submit btn */}
-        <form onSubmit={handleSubmit}>
-          <TextField 
-          id="outlined-basic" 
-          inputProps={{style: {color: "white"}}}
-          InputLabelProps={{style: {color: "white"}}}
-          label="Enter task" 
-          variant="outlined"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          /> 
-          <Button
-            id="outlined-basic"
-            variant="outlined"
-            type="submit"
-          >
-            Submit
-          </Button>
-        </form>
 
+        <InputField value={task} handleSubmit={handleSubmit} setText={setTask} />
 
       </header>
     </div>
