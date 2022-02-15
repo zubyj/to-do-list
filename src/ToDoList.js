@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './ToDoList.css';
 import InputField from './InputField'
 import Task from './Task'
@@ -7,10 +7,10 @@ function ToDoList() {
   
   const [list, setList] = useState([]);
 
-  // Delete task at given index.
   const deleteTask = (index) => {
-    console.log('deleted ' + list[index] +  ' at index ' + index); 
+    console.log('delete at index ' + index);
     const newList = list.filter((_, theIndex) => index !== theIndex);
+    console.log(newList);
     setList(newList);
   }
 

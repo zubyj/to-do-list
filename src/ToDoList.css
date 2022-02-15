@@ -24,16 +24,24 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Start-edit-btn {
+  color: #964B00; 
+} 
+
+.Blank-checkbox-btn {
+  color: #006600;
 }
 
-.Start-edit-btn, .Submit-edit {
+.Submit-edit {
   color: #006600;
 }
 
 .Delete-btn {
-  color: RGBA(255, 86, 0, 1)	
+  color: #964B00;
+}
+
+.Undo-edit-btn {
+  color: #964B00;	
 }
 
 @keyframes App-logo-spin {
