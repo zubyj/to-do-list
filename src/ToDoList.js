@@ -36,12 +36,22 @@ function ToDoList() {
   return (
     <div className="App">
       <header className="App-header">
+
         <h1>To Do List</h1>
+
+        {/* List of tasks */}
+        {list.map((task, index) => {
+        return (
+          <Task key={index} id={index} text={task} deleteTask={deleteTask} editTask={editTask}/>
+              )
+        })}
         
         {/* Text input & submit btn */}
         <form onSubmit={handleSubmit}>
           <TextField 
           id="outlined-basic" 
+          inputProps={{style: {color: "white"}}}
+          InputLabelProps={{style: {color: "white"}}}
           label="Enter task" 
           variant="outlined"
           value={task}
@@ -56,12 +66,7 @@ function ToDoList() {
           </Button>
         </form>
 
-        {/* List of tasks */}
-        {list.map((task, index) => {
-              return (
-                <Task key={index} id={index} text={task} deleteTask={deleteTask} editTask={editTask}/>
-              )
-        })}
+
       </header>
     </div>
   );
