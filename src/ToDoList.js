@@ -11,14 +11,11 @@ function ToDoList() {
   const [text, setText] = useState('');
   
   const deleteTask = (index) => {
-    console.log('delete at index ' + index);
-
     const newList = list.filter((task, theIndex) => {
       if (index !== theIndex) {
         return task;
       }
       else {
-        console.log('removed ' + task);
         setDoneList(doneList.concat(task));
       }
     });
