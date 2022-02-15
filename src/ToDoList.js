@@ -4,6 +4,7 @@ import AddTaskForm from './AddTaskForm'
 import Task from './Task'
 import DoneList from './DoneList'
 import Alert from './Alert'
+import Header from './Header'
 
 function ToDoList() {
   
@@ -26,7 +27,6 @@ function ToDoList() {
       }
     });
     setList(newList);
-    showAlert(true, 'success', 'Task succesfully removed');
   }
 
   const addTask = (e) => {
@@ -82,21 +82,15 @@ function ToDoList() {
   return (
     <div className="App">
       <header className="App-header">
-
-        <div>
-          To Do List
-          <span style={{color: "green", paddingLeft: '20px'}}>
-            [ {list.length === 0 ? 'Done' : list.length} ]
-          </span>
+        <Header size={list.length} />
+        <div className="List-items">
+          {list.map((item, index) => {
+            return (
+              <div key={index} className="Task-item">
+                <Task id={index} text={item} deleteTask={deleteTask} editTask={editTask}/>
+              </div>
+          )})}
         </div>
-
-
-        {list.map((item, index) => {
-          return (
-            <div key={index}>
-              <Task id={index} text={item} deleteTask={deleteTask} editTask={editTask}/>
-            </div>
-        )})}
         <form onSubmit={addTask}>
           <AddTaskForm text={text} handleChange={handleAddTaskChange}/>
         </form>

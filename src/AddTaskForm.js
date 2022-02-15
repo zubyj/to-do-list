@@ -5,10 +5,10 @@ import Button from '@mui/material/Button';
 function AddTaskForm({text, handleChange}) {
 
     return (
-        <div>
+        <div className="Add-task-form">
             <TextField 
                 id="outlined-basic" 
-                inputProps={{style: {color: "white"}}}
+                inputProps={{style: {color: "white", height: "100%", width: "500px"}}}
                 InputLabelProps={{style: {color: "white"}}}
                 label="Enter task" 
                 variant="outlined"
@@ -19,7 +19,7 @@ function AddTaskForm({text, handleChange}) {
                 id="outlined-basic"
                 variant="outlined"
                 type="submit"
-                style={{color: "white"}}
+                style={{color: "white", height: "100%"}}
             >
                 Save
             </Button>

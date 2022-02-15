@@ -61,7 +61,7 @@ function DoneList({list, setList, readdTask}) {
     }
 
     return (
-        <div>
+        <div className="Done-list">
             {showListBtn()}
             {showList && getList()}
         </div>

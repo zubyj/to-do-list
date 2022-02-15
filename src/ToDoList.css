@@ -24,6 +24,24 @@
   color: white;
 }
 
+.Title {
+  margin-top: 3rem;
+}
+
+.List-items {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.Task-item {
+  padding: 1rem;
+}
+
+.Add-task-form {
+  margin-bottom: 3rem;
+  height: 50px;
+}
+
 .Start-edit-btn {
   color: lightblue;
 } 
@@ -37,13 +55,16 @@
 }
 
 
-
 .Delete-btn {
   color: #964B00;
 }
 
 .Undo-edit-btn {
   color: #964B00;	
+}
+
+.Done-list {
+  padding-bottom: 3rem;
 }
 
 .Completed-task {
