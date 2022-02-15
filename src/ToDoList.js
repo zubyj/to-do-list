@@ -45,6 +45,19 @@ function ToDoList() {
     setText(e.target.value);
   }
 
+  // move task from DoneList to ToDoList.
+  const readdTask = (index) => {
+
+    setDoneList(doneList.filter((item, theIndex) => {
+      if (index === theIndex) {
+        setList(list.concat(item));
+      }
+      else {
+        return item;
+      }
+    }))
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -58,7 +71,7 @@ function ToDoList() {
         <form onSubmit={addTask}>
           <AddTaskForm text={text} handleChange={handleAddTaskChange}/>
         </form>
-        <DoneList list={doneList} setList={setDoneList}/>
+        <DoneList list={doneList} setList={setDoneList} readdTask={readdTask}/>
       </header>
     </div>
   );

@@ -4,15 +4,10 @@ import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import Button from '@mui/material/Button';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
-import { responsiveProperty } from '@mui/material/styles/cssUtils';
 
-function DoneList({list, setList}) {
+function DoneList({list, setList, readdTask}) {
 
     const [showList, setShowList] = useState(false);
-
-    const clearBtn = () => {
-
-    }
 
     const showListBtn = () => {
         return (
@@ -32,13 +27,13 @@ function DoneList({list, setList}) {
     const getList = () => {
         return (
             <div>
-
                 {
                     list.map((task, index) => {
                         return (
                             <div key={index}>
                                 <IconButton 
                                     aria-label="undo-done"
+                                    onClick={() => readdTask(index)}
                                 >
                                     <CheckBoxOutlinedIcon className="Checkbox-btn"/>
                                 </IconButton>
@@ -57,7 +52,7 @@ function DoneList({list, setList}) {
                         style={{color: "#FFBABA"}}
                         onClick={() => setList([])}
                         >
-                        Clear Completed
+                        Clear
                     </Button>
                 }
   
