@@ -86,7 +86,7 @@ function ToDoList() {
         <div className="List-items">
           {list.map((item, index) => {
             return (
-              <div key={index} className="Task-item">
+              <div key={index}>
                 <Task id={index} text={item} deleteTask={deleteTask} editTask={editTask}/>
               </div>
           )})}

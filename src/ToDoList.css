@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   background-color: #282c34;
 }
 
@@ -31,10 +30,15 @@
 .List-items {
   margin-top: 6rem;
   margin-bottom: 6rem;
+  font-size: 1rem;
 }
 
 .Task-item {
-  padding: 1rem;
+  padding: .5rem;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .Add-task-form {
@@ -48,15 +52,21 @@
 
 .Done-edit-btn {
   color: #006600;
+  align-items: flex-end
 }
 
 .Checkbox-btn {
   color: #006600;
+  align-items: flex-end;
 }
 
+.Task-text {
+  width: 30rem;
+}
 
 .Delete-btn {
   color: #964B00;
+  align-items: center;
 }
 
 .Undo-edit-btn {

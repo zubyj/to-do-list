@@ -16,8 +16,8 @@ function Task({id, text, deleteTask, editTask}) {
     }
 
     return (
-        <div>
-            {/* Task done (checkmark) button */}
+        <div className="Task-item">
+            {/* Complete button */}
             <IconButton
                 aria-label="finish-task"
                 onClick={() => deleteTask(id)}
@@ -25,8 +25,7 @@ function Task({id, text, deleteTask, editTask}) {
                 <CheckBoxOutlineBlankOutlinedIcon className="Checkbox-btn" />
             </IconButton>
 
-            {/* Task text */}
-            {text}
+            <span className="Task-text">{text}</span>
 
             {/* Edit Button */}
             <IconButton 
@@ -43,7 +42,7 @@ function Task({id, text, deleteTask, editTask}) {
             >
             <DeleteOutlinedIcon className="Delete-btn"/>
             </IconButton>
-        
+
         </div>
 
 
