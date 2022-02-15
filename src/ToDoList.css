@@ -28,18 +28,13 @@
   color: #61dafb;
 }
 
-.delete-Btn {
+.Start-edit-btn, .Submit-edit {
+  color: #006600;
+}
+
+.Delete-btn {
   color: RGBA(255, 86, 0, 1)	
 }
-
-.edit-Btn {
-  color: #006600;
-}
-
-.done-Edit-Btn {
-  color: #006600;
-}
-
 
 @keyframes App-logo-spin {
   from {

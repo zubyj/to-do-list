@@ -1,19 +1,11 @@
 import { useState } from 'react';
 import './ToDoList.css';
-import Task from './Task.js'
 import InputField from './InputField'
-import List from './List'
+import Task from './Task'
 
 function ToDoList() {
+  
   const [list, setList] = useState([]);
-  const [task, setTask] = useState('');
-
-  // Add task to end of list.
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-    setList(list.concat(task));
-    setTask('');
-  }
 
   // Delete task at given index.
   const deleteTask = (index) => {
@@ -22,21 +14,17 @@ function ToDoList() {
     setList(newList);
   }
 
-  const editTask = (index, newTask) => {
-    setList(list.map((item, theIndex) => {
-      if (index === theIndex) {
-        return newTask;
-      }
-      return item;
-    }));
-  }
-
   return (
     <div className="App">
       <header className="App-header">
         <h1>To Do List</h1>
-        <List list={list} />
-        <InputField value={task} handleSubmit={handleSubmit} setText={setTask} />
+        {list.map((item, index) => {
+          return (
+            <div key={index}>
+              <Task id={index} task={item} deleteTask={deleteTask}/>
+            </div>
+        )})}
+        <InputField list={list} setList={setList}/>
       </header>
     </div>
   );

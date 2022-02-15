@@ -2,29 +2,39 @@ import React, { useState} from 'react';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import IconButton from '@mui/material/IconButton';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-import DoneOutlineOutlinedIcon from '@mui/icons-material/DoneOutlineOutlined';
+import EditForm from './EditForm'
 
-function Task({text}) {
+function Task({id, task, deleteTask}) {
 
     const [isEdit, setIsEdit] = useState(false);
+    const [text, setText] = useState(task);
+
+
+    if (isEdit) {
+        return (
+            <EditForm setText={setText} setIsEdit={setIsEdit}/>
+        )
+    }
 
     return (
         <div>
-            {/* Edit Button */}
+            {/* Task text */}
             {text}
+
+            {/* Edit Button */}
             <IconButton 
                 aria-label="edit"
                 onClick={() => setIsEdit(true)}
             >
-            <EditOutlinedIcon className="edit-Btn"/> 
+            <EditOutlinedIcon className="Start-edit-btn"/> 
             </IconButton>
-        
 
             {/* Delete button */}
             <IconButton 
                 aria-label="delete"
+                onClick={() => deleteTask(id)}
             >
-            <DeleteOutlinedIcon className="delete-Btn"/>
+            <DeleteOutlinedIcon className="Delete-btn"/>
             </IconButton>
         
         
