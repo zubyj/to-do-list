@@ -5,20 +5,18 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import EditForm from './EditForm'
 import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlineBlankOutlined';
 
-function Task({id, task, deleteTask}) {
+function Task({id, text, deleteTask, editTask}) {
 
-    const [text, setText] = useState(task);
     const [isEdit, setIsEdit] = useState(false);
 
     if (isEdit) {
         return (
-            <EditForm setText={setText} setIsEdit={setIsEdit}/>
+            <EditForm id={id} editTask={editTask} setIsEdit={setIsEdit}/>
         )
     }
 
     return (
         <div>
-
             {/* Task done (checkmark) button */}
             <IconButton
                 aria-label="finish-task"

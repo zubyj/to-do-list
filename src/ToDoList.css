@@ -25,16 +25,18 @@
 }
 
 .Start-edit-btn {
-  color: #964B00; 
+  color: lightblue;
 } 
+
+.Done-edit-btn {
+  color: #006600;
+}
 
 .Blank-checkbox-btn {
   color: #006600;
 }
 
-.Submit-edit {
-  color: #006600;
-}
+
 
 .Delete-btn {
   color: #964B00;

@@ -4,16 +4,14 @@ import IconButton from '@mui/material/IconButton';
 import DoneOutlineOutlinedIcon from '@mui/icons-material/DoneOutlineOutlined';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
-function EditForm({setText, setIsEdit}) {
+function EditForm({id, setIsEdit, editTask}) {
 
     const [editText, setEditText] = useState('');
 
     const submitEdit = (e) => {
         e.preventDefault();
         setIsEdit(false);
-        if (editText) {
-            setText(editText);
-        }
+        editTask(id, editText);
     }
 
     return (
@@ -31,7 +29,7 @@ function EditForm({setText, setIsEdit}) {
                     aria-label="submit-edit"
                     type="submit"
                 >
-                <DoneOutlineOutlinedIcon className="Submit-edit"/>
+                <DoneOutlineOutlinedIcon className="Done-edit-btn"/>
                 </IconButton>
 
                 <IconButton
