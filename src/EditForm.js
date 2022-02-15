@@ -21,7 +21,7 @@ function EditForm({id, setIsEdit, editTask}) {
                     id="outlined-basic" 
                     inputProps={{style: {color: "white"}}}
                     InputLabelProps={{style: {color: "white"}}}
-                    label="Write new task"
+                    label="Edit task"
                     variant="outlined"
                     onChange={(e) => setEditText(e.target.value)}
                 /> 
