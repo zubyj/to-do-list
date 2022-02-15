@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Task from './Task';
 
-const List = ({deleteItem}) => {
-
+function List({list}) {
     return (
-        <h1>Hello World</h1>
+        <div>
+            {list.map((task, index) => {
+              return (
+                <div>
+                    <Task text={task} />
+                </div>
+            )})}
+        </div>
     )
-};
+}
 
 export default List;

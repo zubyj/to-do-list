@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './ToDoList.css';
 import Task from './Task.js'
 import InputField from './InputField'
+import List from './List'
 
 function ToDoList() {
   const [list, setList] = useState([]);
@@ -33,17 +34,9 @@ function ToDoList() {
   return (
     <div className="App">
       <header className="App-header">
-
         <h1>To Do List</h1>
-        {/* List of tasks */}
-        {list.map((task, index) => {
-        return (
-          <Task key={index} id={index} text={task} deleteTask={deleteTask} editTask={editTask}/>
-              )
-        })}
-
+        <List list={list} />
         <InputField value={task} handleSubmit={handleSubmit} setText={setTask} />
-
       </header>
     </div>
   );
