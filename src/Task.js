@@ -22,7 +22,7 @@ function Task({id, text, deleteTask, editTask}) {
                 aria-label="finish-task"
                 onClick={() => deleteTask(id)}
             >
-                <CheckBoxOutlineBlankOutlinedIcon className="Blank-checkbox-btn" />
+                <CheckBoxOutlineBlankOutlinedIcon className="Checkbox-btn" />
             </IconButton>
 
             {/* Task text */}

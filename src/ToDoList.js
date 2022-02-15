@@ -2,16 +2,26 @@ import React, { useState } from 'react';
 import './ToDoList.css';
 import AddTaskForm from './AddTaskForm'
 import Task from './Task'
-import { SettingsApplicationsSharp } from '@mui/icons-material';
+import DoneList from './DoneList'
 
 function ToDoList() {
   
   const [list, setList] = useState([]); 
+  const [doneList, setDoneList] = useState([]);
   const [text, setText] = useState('');
   
   const deleteTask = (index) => {
     console.log('delete at index ' + index);
-    const newList = list.filter((_, theIndex) => index !== theIndex);
+
+    const newList = list.filter((task, theIndex) => {
+      if (index !== theIndex) {
+        return task;
+      }
+      else {
+        console.log('removed ' + task);
+        setDoneList(doneList.concat(task));
+      }
+    });
     setList(newList);
   }
 
@@ -48,6 +58,7 @@ function ToDoList() {
         <form onSubmit={addTask}>
           <AddTaskForm text={text} handleChange={handleAddTaskChange}/>
         </form>
+        <DoneList list={doneList} setList={setDoneList}/>
       </header>
     </div>
   );

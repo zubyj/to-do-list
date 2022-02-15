@@ -32,7 +32,7 @@
   color: #006600;
 }
 
-.Blank-checkbox-btn {
+.Checkbox-btn {
   color: #006600;
 }
 
@@ -44,6 +44,10 @@
 
 .Undo-edit-btn {
   color: #964B00;	
+}
+
+.Completed-task {
+  text-decoration: line-through;
 }
 
 @keyframes App-logo-spin {
