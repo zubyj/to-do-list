@@ -15,10 +15,12 @@ function DoneList({list, setList, readdTask}) {
                 id="outlined-basic"
                 variant="outlined"
                 type="submit"
-                style={{color: "white"}}
+                style={{color: "white", backgroundColor: "black"}}
                 onClick={() => setShowList(!showList)}
             >
-                Completed <span style={{color: "green"}}>({list.length})</span>
+                <span style={{fontWeight: "bold"}}>
+                    COMPLETED <span style={{color: "green"}}>({list.length})</span>
+                </span>
                 {showList ? <ExpandLessOutlinedIcon/> : <ExpandMoreOutlinedIcon/>}
             </Button>
         )

@@ -1,12 +1,18 @@
 import React from 'react';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 
 function Header({size}) {
     return (
         <div>
-            To Do List
-            <span style={{color: "green", paddingLeft: '20px'}}>
-            [ {size === 0 ? 'Done' : size} ]
+            <div><MenuBookIcon style={{fontSize:60}} className="Title-icon"/></div>
+            <span className="Title"> 
+                <h1>To Do List 
+                    <span className="Title-count">
+                        [ {size === 0 ? 'Done' : size} ]
+                    </span>
+                </h1>
             </span>
+
         </div>
     )
 }

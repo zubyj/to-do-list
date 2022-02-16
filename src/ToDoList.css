@@ -1,8 +1,9 @@
 .App {
-  background-color: #2b3039;
+  background-color: #96998C;
   text-align: center;
   padding-top:3rem;
   min-height: 100vh;
+  font-weight: bold;
 }
 
 .App-header {
@@ -12,24 +13,41 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .Alert {
   font-size: 1rem;
 }
 
+.Title {
+  font-size: 1.4rem;
+}
+
+.Title-icon {
+  width: 3rem;
+  color: darkslategrey;
+}
+
+.Title-count {
+  color: #006600;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+}
+
 .List{
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .Task {
   padding: .5rem;
-  border: 1px solid lightblue;
+  border: 2px solid black;
+  margin-top: .5rem;
   border-radius: 5px;
   display: flex;
   align-items: center;
+  background-color: #cfc0ab;
 }
 
 .Task-text {
@@ -39,7 +57,6 @@
 }
 
 .Task-edit {
-  background-color:#2b3039;
   width:37.5rem;
 }
 
@@ -49,7 +66,7 @@
 }
 
 .Start-edit-btn {
-  color: lightblue;
+  color: black;
 } 
 
 .Done-edit-btn {
