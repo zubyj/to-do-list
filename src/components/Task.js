@@ -37,7 +37,7 @@ function Task({id, text, deleteTask, editTask, showAlert}) {
                 aria-label="edit"
                 onClick={() => setIsEdit(true)}
             >
-            <EditOutlinedIcon className="Start-edit-btn"/> 
+            <EditOutlinedIcon className="Edit-btn"/> 
             </IconButton>
 
             {/* Delete button */}

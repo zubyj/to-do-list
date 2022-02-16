@@ -1,5 +1,7 @@
 .App {
-  background-color: #96998C;
+  background: #2b5876;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   text-align: center;
   padding-top:3rem;
   min-height: 100vh;
@@ -13,20 +15,24 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: black;
 }
 
-.Alert {
+.Alert-msg {
   font-size: 1rem;
+  font-weight: 'bold';
+  background-color: white;
+  border: 1px solid lightblue;
+  border-radius: 10px;
 }
 
 .Title {
   font-size: 1.4rem;
+  color: white;
 }
 
 .Title-icon {
   width: 3rem;
-  color: black;
+  color: white;
 }
 
 .Title-count {
@@ -40,34 +46,54 @@
   margin-bottom: 4rem;
 }
 
+/* Task */
+
 .Task {
-  padding: .5rem;
+  padding: .3rem;
   border: 2px solid black;
   margin-top: .5rem;
   border-radius: 5px;
   display: flex;
   align-items: center;
-  background-color: #cfc0ab;
+  background-color: #222222;
 }
 
 .Task-text {
   text-align: start;
   width: 35rem;
   font-size: 1rem;
+  color: #EFEFED;
+}
+
+.Edit-btn {
+  color: lightblue;
+} 
+
+.Delete-btn {
+  color: #964B00;
+}
+
+/* Input Form */
+
+.Add-form {
+  border-radius: 5px;
+}
+
+.Add-form-input {
+  background-color: whitesmoke;
+  width: 500px;
+}
+
+.Save-btn {
+  background-color: #964B00 !important;
+  border: 1px solid white;
+  font-weight: bold !important;
+  color: whitesmoke !important;
 }
 
 .Task-edit {
   width:37.5rem;
 }
-
-.Add-task-form {
-  margin-bottom: 3rem;
-  height: 50px;
-}
-
-.Start-edit-btn {
-  color: black;
-} 
 
 .Done-edit-btn {
   color: #006600;
@@ -77,9 +103,7 @@
   color: #006600;
 }
 
-.Delete-btn {
-  color: #964B00;
-}
+
 
 .Undo-edit-btn {
   color: #964B00;	
