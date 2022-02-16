@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { BloodtypeOutlined } from '@mui/icons-material';
+import React, { useEffect } from 'react';
 
 function Alert({type, msg, removeAlert}) {
 
-    let msgColor = 'green'
+    let msgColor = 'light-blue'
     if (type === 'error') {
         // yelps red color
         msgColor = "#AF0606";
@@ -17,7 +18,7 @@ function Alert({type, msg, removeAlert}) {
 
     return (
         <div>
-            <p style={{backgroundColor: msgColor,  width: '100%', color: 'whitesmoke'}}>{msg}</p>
+            <p style={{color: msgColor,  width: '100%', fontWeight: 'bold'}}>{msg}</p>
         </div>
     )
 }

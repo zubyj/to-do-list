@@ -26,18 +26,18 @@ function DoneList({list, setList, readdTask}) {
 
     const getList = () => {
         return (
-            <div>
+            <div className="List">
                 {
                     list.map((task, index) => {
                         return (
-                            <div key={index}>
+                            <div key={index} className="Task">
                                 <IconButton 
                                     aria-label="undo-done"
                                     onClick={() => readdTask(index)}
                                 >
                                     <CheckBoxOutlinedIcon className="Checkbox-btn"/>
                                 </IconButton>
-                                <span className="Completed-task">
+                                <span className="Task-text">
                                     {task}
                                 </span>
                             </div>
@@ -52,7 +52,7 @@ function DoneList({list, setList, readdTask}) {
                         style={{color: "#FFBABA"}}
                         onClick={() => setList([])}
                         >
-                        Clear
+                        Clear Completed
                     </Button>
                 }
   
@@ -61,7 +61,7 @@ function DoneList({list, setList, readdTask}) {
     }
 
     return (
-        <div className="Done-list">
+        <div>
             {showListBtn()}
             {showList && getList()}
         </div>

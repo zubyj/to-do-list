@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import DoneOutlineOutlinedIcon from '@mui/icons-material/DoneOutlineOutlined';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
-function EditForm({id, setIsEdit, editTask}) {
+function EditForm({id, setIsEdit, editTask, showAlert}) {
 
     const [editText, setEditText] = useState('');
 
@@ -12,17 +12,19 @@ function EditForm({id, setIsEdit, editTask}) {
         e.preventDefault();
         setIsEdit(false);
         editTask(id, editText);
+        showAlert(true, 'success', 'Task edited')
     }
 
     return (
-        <span>
+        <div className="Task">
             <form onSubmit={submitEdit}>
                 <TextField 
-                    id="outlined-basic" 
+                    className="Task-edit"
+                    id="filled-basic" 
                     inputProps={{style: {color: "white"}}}
                     InputLabelProps={{style: {color: "white"}}}
                     label="Edit task"
-                    variant="outlined"
+                    variant="filled"
                     onChange={(e) => setEditText(e.target.value)}
                 /> 
                 <IconButton
@@ -39,7 +41,7 @@ function EditForm({id, setIsEdit, editTask}) {
                     <CancelOutlinedIcon className="Undo-edit-btn"/>
                 </IconButton>
             </form>
-        </span>        
+        </div>        
 
     );
 }

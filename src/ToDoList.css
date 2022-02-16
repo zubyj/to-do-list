@@ -1,20 +1,12 @@
 .App {
-  background-color: #282c34;
-}
-
-.App-logo {
-  height: 20vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color: #2b3039;
+  text-align: center;
+  padding-top:3rem;
+  min-height: 100vh;
 }
 
 .App-header {
-  min-height: 20vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,22 +15,32 @@
   color: white;
 }
 
-.Title {
-  margin-top: 3rem;
-}
-
-.List-items {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+.Alert {
   font-size: 1rem;
 }
 
-.Task-item {
+.List{
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.Task {
   padding: .5rem;
   border: 1px solid lightblue;
   border-radius: 5px;
   display: flex;
   align-items: center;
+}
+
+.Task-text {
+  text-align: start;
+  width: 35rem;
+  font-size: 1rem;
+}
+
+.Task-edit {
+  background-color:#2b3039;
+  width:37.5rem;
 }
 
 .Add-task-form {
@@ -52,21 +54,14 @@
 
 .Done-edit-btn {
   color: #006600;
-  align-items: flex-end
 }
 
 .Checkbox-btn {
   color: #006600;
-  align-items: flex-end;
-}
-
-.Task-text {
-  width: 30rem;
 }
 
 .Delete-btn {
   color: #964B00;
-  align-items: center;
 }
 
 .Undo-edit-btn {
@@ -75,21 +70,4 @@
 
 .Done-list {
   padding-bottom: 3rem;
-}
-
-.Completed-task {
-  text-decoration: line-through;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-h1 {
-  font-size: 2rem;
 }

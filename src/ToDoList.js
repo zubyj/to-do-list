@@ -16,6 +16,22 @@ function ToDoList() {
     msg: '', 
     type:'',
   })
+
+  const showAlert = (show=false, type="", msg="") => {
+    setAlert({show:show, type, msg})
+  }
+
+  const addTask = (e) => {
+    e.preventDefault();
+    // remove whitespace
+    if (text.replace(/\s+/g, '') === '') {
+      showAlert(true, 'error', 'Please enter a task');
+      return;
+    }
+    setList(list.concat(text));
+    setText('');  
+    showAlert(true, 'success', 'Task added')
+  }
   
   const deleteTask = (index) => {
     const newList = list.filter((task, theIndex) => {
@@ -29,23 +45,10 @@ function ToDoList() {
     setList(newList);
   }
 
-  const addTask = (e) => {
-    e.preventDefault();
-    // remove whitespace from text and check if empty string input.
-    if (text.replace(/\s+/g, '') === '') {
-      showAlert(true, 'error', 'Please enter a task');
-      return;
-    }
-
-    setList(list.concat(text));
-    setText('');
-    showAlert(true, 'success', 'Task ' + list.length+ ' added to list')
-  }
-
   const editTask = (index, newTask) => {
-        // remove whitespace from text and check if empty string input.
-        if (newTask.replace(/\s+/g, '') === '') {
-      showAlert(true, 'error', 'Cannot change to empty task')
+      // remove whitespace
+      if (newTask.replace(/\s+/g, '') === '') {
+        showAlert(true, 'error', 'Please edit by entering a new task')
       return;
     }
 
@@ -58,13 +61,8 @@ function ToDoList() {
     setList(newList);
   }
 
-  const handleAddTaskChange = (e) => {
-    setText(e.target.value);
-  }
-
-  // move task from DoneList to ToDoList.
+  // move task from completed list to todo list
   const readdTask = (index) => {
-
     setDoneList(doneList.filter((item, theIndex) => {
       if (index === theIndex) {
         setList(list.concat(item));
@@ -73,30 +71,30 @@ function ToDoList() {
         return item;
       }
     }))
+    showAlert('true', 'success', 'Readded task');
   };
-
-  const showAlert = (show=false, type="", msg="") => {
-    setAlert({show:show, type, msg})
-  }
 
   return (
     <div className="App">
       <header className="App-header">
         <Header size={list.length} />
-        <div className="List-items">
+        <div className="List">
           {list.map((item, index) => {
             return (
               <div key={index}>
-                <Task id={index} text={item} deleteTask={deleteTask} editTask={editTask}/>
+                <Task id={index} text={item} deleteTask={deleteTask} editTask={editTask} showAlert={showAlert}/>
               </div>
           )})}
         </div>
         <form onSubmit={addTask}>
-          <AddTaskForm text={text} handleChange={handleAddTaskChange}/>
+          <AddTaskForm text={text} handleChange={(e) => setText(e.target.value)}/>
         </form>
+        <span className="Alert  ">
+          {alert.show && <Alert {...alert} removeAlert={showAlert}/>}
+        </span>
         <DoneList list={doneList} setList={setDoneList} readdTask={readdTask}/>
+
       </header>
-      {alert.show && <Alert {...alert} removeAlert={showAlert}/>}
     </div>
   );
 }
