@@ -21,8 +21,8 @@ function EditForm({id, setIsEdit, editTask, showAlert}) {
                 <TextField 
                     className="Task-edit"
                     id="filled-basic" 
-                    inputProps={{style: {color: "black"}}}
-                    InputLabelProps={{style: {color: "black"}}}
+                    inputProps={{style: {color: "white"}}}
+                    InputLabelProps={{style: {color: "white"}}}
                     label="Edit task"
                     variant="filled"
                     onChange={(e) => setEditText(e.target.value)}

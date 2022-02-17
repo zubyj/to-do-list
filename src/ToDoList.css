@@ -3,13 +3,13 @@
   background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   text-align: center;
-  padding-top:3rem;
   min-height: 100vh;
   font-weight: bold;
 }
 
 .App-header {
   min-height: 40vh;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,12 +17,15 @@
   font-size: calc(10px + 2vmin);
 }
 
-.Alert-msg {
-  font-size: 1rem;
-  font-weight: 'bold';
-  background-color: white;
-  border: 1px solid lightblue;
+.Alert {
+  margin-top: 10px;
+  width: 20rem;
+  background-color: lightblue;
   border-radius: 10px;
+  /* manually centered the alert lol */
+  position: absolute;
+  left: 42%;
+
 }
 
 .Title {
@@ -30,14 +33,9 @@
   color: white;
 }
 
-.Title-icon {
-  width: 3rem;
-  color: white;
-}
-
 .Title-count {
-  color: #006600;
-  font-size: 1.2rem;
+  color: green;
+  font-size: 1.5rem;
   padding-left: 1rem;
 }
 
@@ -50,7 +48,7 @@
 
 .Task {
   padding: .3rem;
-  border: 2px solid black;
+  border: 1px solid lightblue;
   margin-top: .5rem;
   border-radius: 5px;
   display: flex;
@@ -77,23 +75,31 @@
 
 .Add-form {
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .Add-form-input {
   background-color: whitesmoke;
   width: 500px;
+  border: 8px solid white !important;
+  border-radius: 5px;
 }
 
 .Save-btn {
   background-color: #964B00 !important;
-  border: 1px solid white;
+  border: 1px solid white !important;
   font-weight: bold !important;
   color: whitesmoke !important;
+  align-items: flex-start;
+  width: 300px;
+  margin: 20px !important;
 }
 
 .Task-edit {
   width:37.5rem;
 }
+
 
 .Done-edit-btn {
   color: #006600;
@@ -104,11 +110,23 @@
 }
 
 
-
 .Undo-edit-btn {
   color: #964B00;	
 }
 
 .Done-list {
   padding-bottom: 3rem;
+}
+
+.Done-task {
+  opacity: 90%;
+}
+
+.Toggle-done-list-btn {
+  color: white !important;
+  border: 1px solid black !important;
+}
+
+.Clear-btn {
+  padding: 5px !important;
 }

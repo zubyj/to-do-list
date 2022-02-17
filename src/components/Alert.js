@@ -11,7 +11,7 @@ function Alert({type, msg, removeAlert}) {
     })
 
     return (
-        <div className="Alert-msg">
+        <div className="Alert">
             <p>{msg}</p>
         </div>
     )

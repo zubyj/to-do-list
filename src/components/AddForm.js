@@ -20,9 +20,9 @@ function AddForm({text, handleChange}) {
             </div>
             <div>
                 <Button
+                    className="Save-btn"
                     variant="filled"
                     type="contained"
-                    className="Save-btn"
                 >
                     Save Task
                 </Button>
