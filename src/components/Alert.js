@@ -3,12 +3,6 @@ import React, { useEffect } from 'react';
 
 function Alert({type, msg, removeAlert}) {
 
-    let msgColor = 'light-blue'
-    if (type === 'error') {
-        // yelps red color
-        msgColor = "#AF0606";
-    }
-
     useEffect(() => {
         const timeout = setTimeout(() => {
             removeAlert();
@@ -17,8 +11,8 @@ function Alert({type, msg, removeAlert}) {
     })
 
     return (
-        <div>
-            <p style={{color: msgColor,  width: '100%', fontWeight: 'bold'}}>{msg}</p>
+        <div className="Alert">
+            <p>{msg}</p>
         </div>
     )
 }

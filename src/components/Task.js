@@ -5,7 +5,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import EditForm from './EditForm'
 import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlineBlankOutlined';
 
-function Task({id, text, deleteTask, editTask, showAlert}) {
+function Task({id, text, deleteTask, editTask, finishTask, showAlert}) {
 
     const [isEdit, setIsEdit] = useState(false);
 
@@ -15,17 +15,12 @@ function Task({id, text, deleteTask, editTask, showAlert}) {
         )
     }
 
-    const finishTask = () => {
-        deleteTask(id);
-        showAlert(true, 'success', 'Task completed! Good work!');
-    }
-
     return (
         <div className="Task">
             {/* Complete button */}
             <IconButton
                 aria-label="finish-task"
-                onClick={finishTask}
+                onClick={() => finishTask(id)}
             >
                 <CheckBoxOutlineBlankOutlinedIcon className="Checkbox-btn" />
             </IconButton>
@@ -37,7 +32,7 @@ function Task({id, text, deleteTask, editTask, showAlert}) {
                 aria-label="edit"
                 onClick={() => setIsEdit(true)}
             >
-            <EditOutlinedIcon className="Start-edit-btn"/> 
+            <EditOutlinedIcon className="Edit-btn"/> 
             </IconButton>
 
             {/* Delete button */}

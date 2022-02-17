@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './../ToDoList.css';
-import AddTaskForm from './AddTaskForm'
+import AddForm from './AddForm'
 import Task from './Task'
 import DoneList from './DoneList'
 import Alert from './Alert'
@@ -34,15 +34,15 @@ function ToDoList() {
   }
   
   const deleteTask = (index) => {
-    const newList = list.filter((task, theIndex) => {
-      if (index !== theIndex) {
-        return task;
-      }
-      else {
-        setDoneList(doneList.concat(task));
-      }
-    });
+    const newList = list.filter((_, theIndex) => index !== theIndex);
     setList(newList);
+  }
+
+  const finishTask = (index) => {
+    const finishedTask = list.filter((_, theIndex) => index === theIndex);
+    setDoneList(doneList.concat(finishedTask));
+    deleteTask(index);
+    showAlert(true, 'success', 'Task finished. Good work!')
   }
 
   const editTask = (index, newTask) => {
@@ -76,24 +76,23 @@ function ToDoList() {
 
   return (
     <div className="App">
+      {alert.show && <Alert {...alert} removeAlert={showAlert}/>}
       <header className="App-header">
         <Header size={list.length} />
         <div className="List">
           {list.map((item, index) => {
             return (
               <div key={index}>
-                <Task id={index} text={item} deleteTask={deleteTask} editTask={editTask} showAlert={showAlert}/>
+                <Task id={index} text={item} deleteTask={deleteTask} editTask={editTask} finishTask={finishTask} showAlert={showAlert}/>
               </div>
           )})}
         </div>
         <form onSubmit={addTask}>
-          <AddTaskForm text={text} handleChange={(e) => setText(e.target.value)}/>
+          <span>
+            <AddForm text={text} handleChange={(e) => setText(e.target.value)}/>
+            <DoneList list={doneList} setList={setDoneList} readdTask={readdTask}/>
+          </span>
         </form>
-        <span className="Alert  ">
-          {alert.show && <Alert {...alert} removeAlert={showAlert}/>}
-        </span>
-        <DoneList list={doneList} setList={setDoneList} readdTask={readdTask}/>
-
       </header>
     </div>
   );

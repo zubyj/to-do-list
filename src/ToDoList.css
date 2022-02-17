@@ -1,56 +1,105 @@
 .App {
-  background-color: #2b3039;
+  background: #2b5876;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   text-align: center;
-  padding-top:3rem;
   min-height: 100vh;
+  font-weight: bold;
 }
 
 .App-header {
   min-height: 40vh;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .Alert {
-  font-size: 1rem;
+  margin-top: 10px;
+  width: 20rem;
+  background-color: lightblue;
+  border-radius: 10px;
+  /* manually centered the alert lol */
+  position: absolute;
+  left: 42%;
+
+}
+
+.Title {
+  font-size: 1.4rem;
+  color: white;
+}
+
+.Title-count {
+  color: green;
+  font-size: 1.5rem;
+  padding-left: 1rem;
 }
 
 .List{
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
+/* Task */
+
 .Task {
-  padding: .5rem;
+  padding: .3rem;
   border: 1px solid lightblue;
+  margin-top: .5rem;
   border-radius: 5px;
   display: flex;
   align-items: center;
+  background-color: #222222;
 }
 
 .Task-text {
   text-align: start;
   width: 35rem;
   font-size: 1rem;
+  color: #EFEFED;
+}
+
+.Edit-btn {
+  color: lightblue;
+} 
+
+.Delete-btn {
+  color: #964B00;
+}
+
+/* Input Form */
+
+.Add-form {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Add-form-input {
+  background-color: whitesmoke;
+  width: 500px;
+  border: 8px solid white !important;
+  border-radius: 5px;
+}
+
+.Save-btn {
+  background-color: #964B00 !important;
+  border: 1px solid white !important;
+  font-weight: bold !important;
+  color: whitesmoke !important;
+  align-items: flex-start;
+  width: 300px;
+  margin: 20px !important;
 }
 
 .Task-edit {
-  background-color:#2b3039;
   width:37.5rem;
 }
 
-.Add-task-form {
-  margin-bottom: 3rem;
-  height: 50px;
-}
-
-.Start-edit-btn {
-  color: lightblue;
-} 
 
 .Done-edit-btn {
   color: #006600;
@@ -60,9 +109,6 @@
   color: #006600;
 }
 
-.Delete-btn {
-  color: #964B00;
-}
 
 .Undo-edit-btn {
   color: #964B00;	
@@ -70,4 +116,24 @@
 
 .Done-list {
   padding-bottom: 3rem;
+}
+
+.Done-task {
+  opacity: 90%;
+}
+
+.Toggle-done-list-btn {
+  color: white !important;
+  border: 1px solid black !important;
+}
+
+.Clear-btn {
+  color: #FF4500 !important;
+  margin-top: 20px !important;
+  border: 1px solid #FF4500 !important;
+}
+
+.Clear-btn:hover {
+  color: white !important;
+  background: #FF4500 !important;
 }

@@ -15,10 +15,12 @@ function DoneList({list, setList, readdTask}) {
                 id="outlined-basic"
                 variant="outlined"
                 type="submit"
-                style={{color: "white"}}
+                className="Toggle-done-list-btn"
                 onClick={() => setShowList(!showList)}
             >
-                Completed <span style={{color: "green"}}>({list.length})</span>
+                <span style={{fontWeight: "bold"}}>
+                    COMPLETED <span style={{color: "green"}}>({list.length})</span>
+                </span>
                 {showList ? <ExpandLessOutlinedIcon/> : <ExpandMoreOutlinedIcon/>}
             </Button>
         )
@@ -30,7 +32,7 @@ function DoneList({list, setList, readdTask}) {
                 {
                     list.map((task, index) => {
                         return (
-                            <div key={index} className="Task">
+                            <div key={index} className="Task Done-task">
                                 <IconButton 
                                     aria-label="undo-done"
                                     onClick={() => readdTask(index)}
@@ -49,15 +51,19 @@ function DoneList({list, setList, readdTask}) {
                     <Button
                         id="outlined-basic"
                         variant="outlined"
-                        style={{color: "#FFBABA"}}
+                        className="Clear-btn"
                         onClick={() => setList([])}
                         >
-                        Clear Completed
+                        Clear
                     </Button>
                 }
   
             </div>
         )
+    }
+
+    if (list.length < 1) {
+        return <div></div>
     }
 
     return (
