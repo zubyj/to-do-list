@@ -11,7 +11,7 @@ function Task({id, text, deleteTask, editTask, finishTask, showAlert}) {
 
     if (isEdit) {
         return (
-            <EditForm id={id} editTask={editTask} setIsEdit={setIsEdit} showAlert={showAlert}/>
+            <EditForm id={id} text={text} editTask={editTask} setIsEdit={setIsEdit} showAlert={showAlert}/>
         )
     }
 

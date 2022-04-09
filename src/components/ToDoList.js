@@ -21,9 +21,10 @@ function ToDoList() {
     setAlert({show:show, type, msg})
   }
 
+  // Adds task at end of list.
   const addTask = (e) => {
     e.preventDefault();
-    // remove whitespace
+    // If user submits empty task, return error.
     if (text.replace(/\s+/g, '') === '') {
       showAlert(true, 'error', 'Please enter a task');
       return;
@@ -33,11 +34,13 @@ function ToDoList() {
     showAlert(true, 'success', 'Task added')
   }
   
+  // Deletes task at given index.
   const deleteTask = (index) => {
     const newList = list.filter((_, theIndex) => index !== theIndex);
     setList(newList);
   }
 
+  // Moves task to done list.
   const finishTask = (index) => {
     const finishedTask = list.filter((_, theIndex) => index === theIndex);
     setDoneList(doneList.concat(finishedTask));
@@ -45,6 +48,7 @@ function ToDoList() {
     showAlert(true, 'success', 'Task finished. Good work!')
   }
 
+  // Replaces task at given index. 
   const editTask = (index, newTask) => {
       // remove whitespace
       if (newTask.replace(/\s+/g, '') === '') {
@@ -61,7 +65,7 @@ function ToDoList() {
     setList(newList);
   }
 
-  // move task from completed list to todo list
+  // Move task from completed list back to todo list.
   const readdTask = (index) => {
     setDoneList(doneList.filter((item, theIndex) => {
       if (index === theIndex) {
@@ -77,7 +81,7 @@ function ToDoList() {
   return (
     <div className="App">
       {alert.show && <Alert {...alert} removeAlert={showAlert}/>}
-      <header className="App-header">
+      <div className="App-body">
         <Header size={list.length} />
         <div className="List">
           {list.map((item, index) => {
@@ -93,7 +97,7 @@ function ToDoList() {
             <DoneList list={doneList} setList={setDoneList} readdTask={readdTask}/>
           </span>
         </form>
-      </header>
+      </div>
     </div>
   );
 }

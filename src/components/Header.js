@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header({size}) {
     return (
-        <div>
+        <header>
             <span className="Title"> 
                 <h1>To Do List 
                     <span className="Title-count">
@@ -10,8 +10,7 @@ function Header({size}) {
                     </span>
                 </h1>
             </span>
-
-        </div>
+        </header>
     )
 }
 

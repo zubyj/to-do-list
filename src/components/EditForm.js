@@ -4,9 +4,9 @@ import IconButton from '@mui/material/IconButton';
 import DoneOutlineOutlinedIcon from '@mui/icons-material/DoneOutlineOutlined';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
-function EditForm({id, setIsEdit, editTask, showAlert}) {
+function EditForm({id, text, setIsEdit, editTask, showAlert}) {
 
-    const [editText, setEditText] = useState('');
+    const [editText, setEditText] = useState(text);
 
     const submitEdit = (e) => {
         e.preventDefault();
@@ -22,9 +22,8 @@ function EditForm({id, setIsEdit, editTask, showAlert}) {
                     className="Task-edit"
                     id="filled-basic" 
                     inputProps={{style: {color: "white"}}}
-                    InputLabelProps={{style: {color: "white"}}}
-                    label="Edit task"
                     variant="filled"
+                    value={editText}
                     onChange={(e) => setEditText(e.target.value)}
                 /> 
                 <IconButton
