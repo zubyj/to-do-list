@@ -62,6 +62,7 @@ function ToDoList() {
       }
       return task; 
     })
+    showAlert(true, 'edit', 'Task edited')
     setList(newList);
   }
 

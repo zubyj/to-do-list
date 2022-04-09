@@ -16,6 +16,9 @@ function Alert({type, msg, removeAlert}) {
             case 'done': {
                 return 'Alert-done'
             }
+            case 'edit' : {
+                return 'Alert-add'
+            } 
         }
     } 
 

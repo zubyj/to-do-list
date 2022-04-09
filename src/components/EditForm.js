@@ -12,7 +12,6 @@ function EditForm({id, text, setIsEdit, editTask, showAlert}) {
         e.preventDefault();
         setIsEdit(false);
         editTask(id, task);
-        showAlert(true, 'success', 'Task edited')
     }
 
     return (
@@ -24,6 +23,7 @@ function EditForm({id, text, setIsEdit, editTask, showAlert}) {
                     inputProps={{style: {color: "white"}}}
                     variant="filled"
                     value={task}
+                    size="small"
                     onChange={(e) => setTask(e.target.value)}
                 /> 
                 <IconButton

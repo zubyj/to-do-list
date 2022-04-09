@@ -20,11 +20,10 @@
 /* Alerts */
 .Alert {
   margin-top: 10px;
-  width: 20rem;
+  width: 100%;
   border-radius: 10px;
   /* centered the alert */
-  position: absolute;
-  left: 42%;
+  text-align: center;
 }
 
 .Alert-add {
@@ -78,7 +77,7 @@
 
 .Task-text {
   text-align: start;
-  width: 35rem;
+  width: 250px;
   font-size: 1rem;
   color: #EFEFED;
 }
@@ -101,7 +100,7 @@
 
 .Add-form-input {
   background-color: whitesmoke;
-  width: 650px;
+  width: 250px;
   border: 8px solid white !important;
   border-radius: 5px;
 }
@@ -117,7 +116,7 @@
 }
 
 .Task-edit {
-  width:37.5rem;
+  width:250px;
 }
 
 
@@ -156,4 +155,17 @@
 .Clear-btn:hover {
   color: white !important;
   background: #FF4500 !important;
+}
+
+@media only screen and (min-width: 1024px) {
+  .Add-form-input, .Task-text, .Task-edit {
+    width: 650px;
+  }
+
+  .Alert {
+    /* centered */
+    width: 400px;
+    position: absolute;
+    left: 40%;
+  }
 }
