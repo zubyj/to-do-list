@@ -17,34 +17,54 @@
   font-size: calc(10px + 2vmin);
 }
 
+/* Alerts */
 .Alert {
   margin-top: 10px;
   width: 20rem;
-  background-color: lightblue;
   border-radius: 10px;
-  /* manually centered the alert lol */
+  /* centered the alert */
   position: absolute;
   left: 42%;
-
 }
+
+.Alert-add {
+  background-color: lightblue;
+}
+
+.Alert-done {
+  background-color: lightgreen;
+}
+
+.Alert-delete {
+  background-color: orangered;
+}
+
+/* Title */
 
 .Title {
-  font-size: 1.4rem;
-  color: white;
+  font-size: 2.5rem;
+  color: #F5F5F5;
 }
 
-.Title-count {
-  color: green;
+.Tasks-header {
   font-size: 1.5rem;
   padding-left: 1rem;
 }
+
+.Num-tasks-header {
+  color: darkgoldenrod;
+}
+
+.Done-header {
+  color: green;
+}
+
+/* Tasks */
 
 .List{
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
-
-/* Task */
 
 .Task {
   padding: .3rem;
@@ -81,7 +101,7 @@
 
 .Add-form-input {
   background-color: whitesmoke;
-  width: 500px;
+  width: 650px;
   border: 8px solid white !important;
   border-radius: 5px;
 }

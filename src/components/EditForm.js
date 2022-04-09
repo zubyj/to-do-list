@@ -6,12 +6,12 @@ import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
 function EditForm({id, text, setIsEdit, editTask, showAlert}) {
 
-    const [editText, setEditText] = useState(text);
+    const [task, setTask] = useState(text);
 
     const submitEdit = (e) => {
         e.preventDefault();
         setIsEdit(false);
-        editTask(id, editText);
+        editTask(id, task);
         showAlert(true, 'success', 'Task edited')
     }
 
@@ -23,8 +23,8 @@ function EditForm({id, text, setIsEdit, editTask, showAlert}) {
                     id="filled-basic" 
                     inputProps={{style: {color: "white"}}}
                     variant="filled"
-                    value={editText}
-                    onChange={(e) => setEditText(e.target.value)}
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
                 /> 
                 <IconButton
                     aria-label="submit-edit"

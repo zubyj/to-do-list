@@ -21,7 +21,7 @@ function ToDoList() {
     setAlert({show:show, type, msg})
   }
 
-  // Adds task at end of list.
+  // Adds task at end of list
   const addTask = (e) => {
     e.preventDefault();
     // If user submits empty task, return error.
@@ -31,31 +31,31 @@ function ToDoList() {
     }
     setList(list.concat(text));
     setText('');  
-    showAlert(true, 'success', 'Task added')
+    showAlert(true, 'add', 'Task added')
   }
   
-  // Deletes task at given index.
+  // Deletes task at given index
   const deleteTask = (index) => {
     const newList = list.filter((_, theIndex) => index !== theIndex);
     setList(newList);
+    showAlert(true, 'delete', 'Task deleted')
   }
 
-  // Moves task to done list.
+  // Moves task to done list
   const finishTask = (index) => {
     const finishedTask = list.filter((_, theIndex) => index === theIndex);
     setDoneList(doneList.concat(finishedTask));
     deleteTask(index);
-    showAlert(true, 'success', 'Task finished. Good work!')
+    showAlert(true, 'done', 'Task finished. Good work!')
   }
 
-  // Replaces task at given index. 
+  // Replaces task at given index
   const editTask = (index, newTask) => {
       // remove whitespace
       if (newTask.replace(/\s+/g, '') === '') {
         showAlert(true, 'error', 'Please edit by entering a new task')
       return;
     }
-
     const newList = list.map((task, theIndex) => {
       if (index === theIndex) {
         return newTask;
@@ -65,7 +65,7 @@ function ToDoList() {
     setList(newList);
   }
 
-  // Move task from completed list back to todo list.
+  // Moves task from completed list  to todo list
   const readdTask = (index) => {
     setDoneList(doneList.filter((item, theIndex) => {
       if (index === theIndex) {
@@ -75,7 +75,7 @@ function ToDoList() {
         return item;
       }
     }))
-    showAlert('true', 'success', 'Readded task');
+    showAlert('true', 're-add', 'Readded task');
   };
 
   return (

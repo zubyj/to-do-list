@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
 
@@ -14,6 +14,7 @@ function AddForm({text, handleChange}) {
                     label="Add task" 
                     variant="outlined"
                     value={text}
+                    size="small"
                     onChange={handleChange}
                 /> 
             </div>

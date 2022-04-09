@@ -1,15 +1,17 @@
 import React from 'react';
 
 function Header({size}) {
+
+    const doneHeader = <span className="Done-header">Done</span>
+    const numTasksHeader = <span className="Num-tasks-header">[ {size} ]</span>
+
     return (
         <header>
-            <span className="Title"> 
-                <h1>To Do List 
-                    <span className="Title-count">
-                        [ {size === 0 ? 'Done' : size} ]
-                    </span>
-                </h1>
-            </span>
+            <h1 className="Title">To Do List
+                <span className="Tasks-header">
+                    {size === 0 ? doneHeader : numTasksHeader}
+                </span>
+            </h1>
         </header>
     )
 }

@@ -1,7 +1,25 @@
-import { BloodtypeOutlined } from '@mui/icons-material';
 import React, { useEffect } from 'react';
 
 function Alert({type, msg, removeAlert}) {
+
+    const className = (type) => {
+        switch (type) {
+            case 'error': {
+                return 'Alert-error'
+            } 
+            case 'add': {
+                return 'Alert-add'
+            }
+            case 'delete': {
+                return 'Alert-delete'
+            }
+            case 'done': {
+                return 'Alert-done'
+            }
+        }
+    } 
+
+    console.log('className ' + className);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -11,8 +29,10 @@ function Alert({type, msg, removeAlert}) {
     })
 
     return (
-        <div className="Alert">
-            <p>{msg}</p>
+        <div className='Alert'>
+            <div className={className(type)}>
+                {msg}
+            </div>
         </div>
     )
 }

@@ -40,7 +40,6 @@ function Task({id, text, deleteTask, editTask, finishTask, showAlert}) {
                 aria-label="delete"
                 onClick={() => {
                     deleteTask(id);
-                    showAlert(true, 'success', 'Task deleted')
                 }}
             >
                 <DeleteOutlinedIcon className="Delete-btn"/>
