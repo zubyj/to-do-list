@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import './../ToDoList.css';
-import AddForm from './AddForm'
-import Task from './Task'
-import DoneList from './DoneList'
-import Alert from './Alert'
-import Header from './Header'
+import React, { useState, useEffect } from 'react';
+import './ToDoList.css';
+import AddForm from './components/AddForm'
+import Task from './components/Task'
+import DoneList from './components/DoneList'
+import Alert from './components/Alert'
+import Header from './components/Header'
+
+const LOCAL_STORAGE_KEY = 'react-todo-list-todos';
 
 function ToDoList() {
   
@@ -16,6 +18,19 @@ function ToDoList() {
     msg: '', 
     type:'',
   })
+
+  // On refresh, reload data if exists
+  useEffect(() => {
+    const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storageTodos) {
+      setList(storageTodos[0]);
+      setDoneList(storageTodos[1]);
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([list, doneList]))
+  }, [list, doneList])    
 
   const showAlert = (show=false, type="", msg="") => {
     setAlert({show:show, type, msg})
