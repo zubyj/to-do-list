@@ -12,7 +12,7 @@ A minimal To-do list app
 
 Built with ReactJS & MaterialUI
 
-## Functions
+### Functions
 
 :writing_hand: Add task
 
