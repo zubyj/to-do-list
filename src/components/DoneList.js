@@ -13,14 +13,12 @@ function DoneList({list, setList, readdTask}) {
         return (
             <Button
                 id="outlined-basic"
-                variant="outlined"
+                variant="contained"
                 type="submit"
                 className="Toggle-done-list-btn"
                 onClick={() => setShowList(!showList)}
             >
-                <span style={{fontWeight: "bold"}}>
-                    COMPLETED <span style={{color: "green"}}>({list.length})</span>
-                </span>
+                Completed tasks <span style={{color: "darkblue"}}>({list.length})</span>
                 {showList ? <ExpandLessOutlinedIcon/> : <ExpandMoreOutlinedIcon/>}
             </Button>
         )
@@ -30,31 +28,32 @@ function DoneList({list, setList, readdTask}) {
         return (
             <div className="List">
                 {
-                    list.map((task, index) => {
-                        return (
-                            <div key={index} className="Task Done-task">
-                                <IconButton 
-                                    aria-label="undo-done"
-                                    onClick={() => readdTask(index)}
-                                >
-                                    <CheckBoxOutlinedIcon className="Checkbox-btn"/>
-                                </IconButton>
-                                <span className="Task-text">
-                                    {task}
-                                </span>
-                            </div>
-                        )
-                    })
+                list.map((task, index) => {
+                    return (
+                        <div key={index} className="Task Done-task">
+                            <IconButton 
+                                aria-label="undo-done"
+                                onClick={() => readdTask(index)}
+                            >
+                                <CheckBoxOutlinedIcon className="Undo-done-btn"/>
+                            </IconButton>
+                            <span className="Task-text">
+                                {task}
+                            </span>
+                        </div>
+                    )
+                })
                 }
 
                 {list.length > 0 &&
                     <Button
                         id="outlined-basic"
-                        variant="outlined"
+                        variant="contained"
+                        color="error"
                         className="Clear-btn"
                         onClick={() => setList([])}
                         >
-                        Clear
+                        Clear Finished
                     </Button>
                 }
   

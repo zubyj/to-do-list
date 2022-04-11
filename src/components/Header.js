@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header({size}) {
 
-    const doneHeader = <span className="Done-header">Done</span>
+    const doneHeader = <span className="No-tasks-header">Done</span>
     const numTasksHeader = <span className="Num-tasks-header">[ {size} ]</span>
 
     return (

@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="zubyj.me/projects/to-do-list/">
-    <img src="./public/screenshot.png">
+    <img src="./public/screenshot.png" width="500">
   </a>
 </p>
 
@@ -16,12 +16,12 @@ Built with ReactJS & MaterialUI
 
 ## Functions
 
-:heavy_plus_sign: Add task
+:writing_hand: Add task
 
-:heavy_minus_sign: Delete task
+:no_entry: Delete task
 
 :white_check_mark: Finish task
 
 :pencil2:	Edit task
 
-:heavy_multiplication_x: Undo finish task	
+:no_entry_sign: Undo finish task	

@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 
 function Alert({type, msg, removeAlert}) {
 
-    const className = (type) => {
+
+    const getClassName = (type) => {
         switch (type) {
             case 'error': {
                 return 'Alert-error'
@@ -22,8 +23,6 @@ function Alert({type, msg, removeAlert}) {
         }
     } 
 
-    console.log('className ' + className);
-
     useEffect(() => {
         const timeout = setTimeout(() => {
             removeAlert();
@@ -33,7 +32,7 @@ function Alert({type, msg, removeAlert}) {
 
     return (
         <div className='Alert'>
-            <div className={className(type)}>
+            <div className={getClassName(type)}>
                 {msg}
             </div>
         </div>
