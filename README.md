@@ -1,8 +1,6 @@
-# To Do List
-
 <p>
-  <a href="zubyj.me/projects/to-do-list/">
-    <img src="./public/screenshot.png" width="500">
+  <a href="http://zubyj.me/projects/to-do-list/">
+    <img src="./public/screenshot.png">
   </a>
 </p>
 
