@@ -2,7 +2,7 @@
 
 A simple to-do-list to learn some React. No backend is used for this app. Instead the data is stored locally. 
 
-### Functions
+### 4 Simple Functions
 
 :no_entry: Delete task :white_check_mark: Finish task
 
